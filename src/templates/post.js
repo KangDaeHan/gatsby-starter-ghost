@@ -6,6 +6,8 @@ import { Helmet } from 'react-helmet'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+
 /**
 * Single post view (/:slug)
 *
@@ -14,6 +16,12 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.ghostPost
+
+    let disqusConfig = {
+      url: `${config.siteUrl+location.pathname}`,
+      identifier: post.id,
+      title: post.title,
+    }
 
     return (
         <>
@@ -44,6 +52,11 @@ const Post = ({ data, location }) => {
                     </article>
                 </div>
             </Layout>
+
+            <h1>{post.title}</h1>
+            <CommentCount config={disqusConfig} placeholder={'...'} />
+            /* Post Contents */
+            <Disqus config={disqusConfig} />
         </>
     )
 }

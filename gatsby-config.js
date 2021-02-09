@@ -183,6 +183,12 @@ module.exports = {
                 addUncaughtPages: true,
             },
         },
+        {
+          resolve: `gatsby-plugin-disqus`,
+          options: {
+            shortname: `devlogstory`
+          }
+        },
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
