@@ -51,13 +51,13 @@ const Post = ({ data, location }) => {
                             />
                         </section>
                     </article>
+
+                    {/* disqus 추가 */}
+                    <h3>{post.title}</h3>
+                    <CommentCount config={disqusConfig} />
+                    <Disqus config={disqusConfig} />
                 </div>
             </Layout>
-
-            <h1>{post.title}</h1>
-            <CommentCount config={disqusConfig} placeholder={'...'} />
-            /* Post Contents */
-            <Disqus config={disqusConfig} />
         </>
     )
 }
