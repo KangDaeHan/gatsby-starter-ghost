@@ -53,7 +53,7 @@ const Post = ({ data, location }) => {
                     </article>
 
                     {/* disqus 추가 */}
-                    <h3>{post.title}</h3>
+                    {/* <h3>{post.title}</h3> */}
                     <CommentCount config={disqusConfig} />
                     <Disqus config={disqusConfig} />
                 </div>
